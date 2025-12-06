@@ -1,0 +1,46 @@
+body {
+    background-color: #000;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#ui {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+#ui .miss_word {
+    color: #ea80b0;
+    font-size: 1.6rem;
+    transform: translateY(-100%) rotateZ(-30deg);
+    text-shadow: 0 0 10px #fff;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#ui .miss_horizontal {
+    animation: horizontal 10000ms infinite alternate ease-in-out;
+    animation-delay: calc(var(--i) * -300ms);
+}
+
+@keyframes horizontal {
+    0% {
+        opacity: 0.2;
+        text-shadow: 0 0 0px #fff;
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 20px #fff, 0 0 40px #ea80b0;
+    }
+    100% {
+        opacity: 0.2;
+        text-shadow: 0 0 0px #fff;
+    }
+}
